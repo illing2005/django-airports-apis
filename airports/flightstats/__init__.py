@@ -2,10 +2,11 @@ import json
 import urllib2
 
 from ..models import Airport
+from .. import BasicAPI
 
 ENDPOINT_URL = 'https://api.flightstats.com/flex/airports/rest/v1/json/'
 
-class Flightstats(object):
+class Flightstats(BasicAPI):
     
     def __init__(self,*args,**kwargs):
         self.app_id = kwargs['app_id']
