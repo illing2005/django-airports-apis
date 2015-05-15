@@ -27,8 +27,11 @@ TEMPLATE_DEBUG = True
 ALLOWED_HOSTS = []
 
 
-# Application definition
+AIRPORT_API = {'flighstats': ('airports.flightstats.Flightstats',
+                              {'app_id' : 'da983eec',
+                               'app_key' : 'fbaaefd87bba19e7990259d7440a7ee6'}),}
 
+# Application definition
 PROJECT_APPS = [
     'airports',
 ]
