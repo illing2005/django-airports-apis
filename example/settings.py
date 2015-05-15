@@ -26,6 +26,11 @@ TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = []
 
+gettext = lambda s: s
+LANGUAGES = (
+    ('de', gettext('German')),
+    ('en', gettext('English')),
+)
 
 AIRPORT_API = {'flighstats': ('airports.flightstats.Flightstats',
                               {'app_id' : 'da983eec',
@@ -37,12 +42,16 @@ PROJECT_APPS = [
 ]
 
 INSTALLED_APPS = [
+    'modeltranslation',
+    
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    
+    
 ] + PROJECT_APPS
 
 MIDDLEWARE_CLASSES = (

@@ -9,6 +9,7 @@ APP_DIR = os.path.normpath(os.path.join(os.path.dirname(os.path.realpath(__file_
 
 class OpenFlights(BasicAPI):
     
+    is_multilingual = False
     data_dir = os.path.join(APP_DIR, 'data')
     
     def download(self, filename='tmp.dat'):  

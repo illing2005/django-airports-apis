@@ -20,6 +20,15 @@ class BasicAPI(object):
     This class defines the basic API. 
     '''
     __metaclass__ = abc.ABCMeta
+    
+    @abc.abstractproperty
+    def is_multilingual(self):
+        '''
+        Allowed short arguments. Ie -h or -l as string ("hl")
+        '''
+        raise NotImplementedError("This attribute must be implemented")
+    
+    
     @abc.abstractmethod
     def download(self):
         pass

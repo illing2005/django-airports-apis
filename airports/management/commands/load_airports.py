@@ -20,6 +20,14 @@ class Command(BaseCommand):
             Airport.objects.all().delete()
         else:
             airport_api = get_airport_api()
-            fn = airport_api.download()
-            airport_api.import_data(fn)
+            
+            if airport_api.is_multilingual and 'modeltranslation' in settings.INSTALLED_APPS:
+                languages = settings.LANGUAGES
+                airport_data = dict()
+                for lang in languages:
+                    airport_data[lang[0]] = airport_api.download(lang)
+                airport_api.import_data(airport_data, languages=languages)
+            else:
+                fn = airport_api.download() 
+                airport_api.import_data(fn)
         
