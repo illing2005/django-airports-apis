@@ -5,10 +5,17 @@ README = open(os.path.join(os.path.dirname(__file__), 'README.md')).read()
 
 # allow setup.py to be run from any path
 os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
-
+PACKAGES = [
+    'airports',
+    'airports.flightstats',
+    'airports.migrations',
+    'airports.openflights',
+    'airports.management',
+]
+    
 setup(
     name='django-airports-apis',
-    version='0.0.1',
+    version='0.0.2',
     packages=find_packages(exclude=['example']),
     include_package_data=True,
     license='MIT License',
